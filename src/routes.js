@@ -34,15 +34,15 @@ router.route("/artists")
     .post((req, res) => {
         console.log("POST /artists");
 
-        // if (!("genres" in req.body)) {
-        //     res.status(400).send({"message": 'Missing genres to create a new artist!'});
-        //     return
-        // }
+        if (!("genres" in req.body)) {
+            res.status(400).send({"message": 'Missing genres to create a new artist!'});
+            return
+        }
 
-        // if (!("name" in req.body)) {
-        //     res.status(400).send({"message": 'Missing name to create a new artist!'});
-        //     return
-        // }
+        if (!("name" in req.body)) {
+            res.status(400).send({"message": 'Missing name to create a new artist!'});
+            return
+        }
 
         console.log(req.body)
 
